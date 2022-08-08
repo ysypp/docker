@@ -6,7 +6,7 @@ node {
     app = docker.build("jenkins-docker-pipeline/my-image")
   }
   stage('========== Push image ==========') {
-    docker.withRegistry('YOUR_REGISTRY', 'YOUR_CREDENTIAL') {
+    docker.withRegistry('https://registry.hub.docker.com', 'seungyoonyoo') {
       app.push("${env.BUILD_NUMBER}")
       app.push("latest")
     }
